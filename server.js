@@ -19,8 +19,6 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 
-// routes
-app.use(routes)
 
 app.locals.company = 'Freddit'
 
@@ -28,6 +26,9 @@ app.locals.company = 'Freddit'
 
 app.use(express.static('public'))
 app.use(bodyParser.urlencoded({ extended: false }))
+
+// routes
+app.use(routes)
 
 
 //Listens to Port for changes
