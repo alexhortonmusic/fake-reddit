@@ -14,9 +14,15 @@ app.set('port', port)
 
 app.set('view engine', 'pug')
 
+if (process.env.NODE_ENV !== 'production') {
+	app.locals.pretty = true
+}
+
 
 // routes
 app.use(routes)
+
+app.locals.company = 'Freddit'
 
 //middlewares
 
@@ -25,13 +31,13 @@ app.use(bodyParser.urlencoded({ extended: false }))
 
 
 //Listens to Port for changes
-// connect()
-// 	.then(() => {
-// 		app.listen(port, () => {
-// 			console.log(`Express server listening on port ${port}`)
-// 		})
-// 	})
-// 	.catch(console.error)
+connect()
+	.then(() => {
+		app.listen(port, () => {
+			console.log(`Express server listening on port ${port}`)
+		})
+	})
+	.catch(console.error)
 
 
-app.listen(3000)
+// app.listen(3000)
