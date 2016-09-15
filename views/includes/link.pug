@@ -1,14 +1,15 @@
-.col-md-1
-  .voteBox
-    .upvote
-      button.btn.btn-default
-        span.glyphicon.glyphicon-chevron-up
-    .downvote
-      button.btn.btn-default
-        span.glyphicon.glyphicon-chevron-down
-each article in [{imgUrl: 'http://i.huffpost.com/gen/982231/thumbs/o-FLORIDA-MAN-facebook.jpg', title: 'This man is UGLY!'}]
-  .col-md-2
-    img.articleImg(src=article.image)
-  .col-md-8
-    h2 #{article.title}
-    p (will embed article text with article.link)
+each article in articles
+  .col-md-12.postBox
+    .col-md-1
+      .voteBox
+        .upvote
+          button.btn.btn-default
+            span.glyphicon.glyphicon-chevron-up
+        .downvote
+          button.btn.btn-default
+            span.glyphicon.glyphicon-chevron-down
+    .col-md-2
+      img.articleImg(src=article.image)
+    .col-md-8
+      h2
+        a(href=article.link) #{article.title}
