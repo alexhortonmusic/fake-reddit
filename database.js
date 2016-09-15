@@ -5,4 +5,4 @@ const MONGODB_URL = 'mongodb://localhost:27017/fake-reddit'
 
 mongoose.Promise = Promise
 
-module.exports.connect = () => mongose.connect(MONGODB_URL)
+module.exports.connect = () => mongoose.connect(MONGODB_URL)
