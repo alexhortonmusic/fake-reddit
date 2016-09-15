@@ -1,0 +1,19 @@
+extends includes/layout.pug
+
+block content
+	.topic-form
+		form(method='POST')
+			h2 Create New Topic
+			.form-group
+				label(for='title') Title
+				input.form-control#title(type='text' name='title')
+			.form-group
+				label(for='image') Image
+				input.form-control#image(type='url' name='image')
+			.form-group
+				label(for='link') Link
+				input.form-control#link(type='url' name='link')
+			.topic-form__submit
+				a.btn.btn-danger.btn-lg(href='/') Cancel
+				input.btn.btn-success.btn-lg(type='submit' value='Submit')
+
