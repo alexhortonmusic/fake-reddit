@@ -1,0 +1,9 @@
+/*-----Front Page----*/
+.voteBox {
+  width: 40px;
+  display: inline-block;
+}
+
+.articleImg {
+  width: 100px;
+}
