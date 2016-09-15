@@ -1,4 +1,10 @@
 /*-----Front Page----*/
+
+.postBox {
+  margin-bottom: 20px;
+  border: 1px solid black;
+}
+
 .voteBox {
   width: 40px;
   display: inline-block;
