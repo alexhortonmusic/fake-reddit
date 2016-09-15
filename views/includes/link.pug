@@ -8,6 +8,8 @@ each article in articles
         .downvote
           button.btn.btn-default
             span.glyphicon.glyphicon-chevron-down
+      .counter
+        h3 #{article.score}
     .col-md-2
       img.articleImg(src=article.image)
     .col-md-8

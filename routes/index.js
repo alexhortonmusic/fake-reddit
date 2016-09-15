@@ -21,6 +21,7 @@ router.get('/new', (req, res) =>
 )
 
 router.post('/new', (req, res, err) => {
+  req.body.score = 0
   console.log(req.body)
 	newPost
 		.create(req.body)
