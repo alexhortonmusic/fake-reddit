@@ -5,7 +5,7 @@ const chalk = require('chalk')
 const bodyParser = require('body-parser')
 
 const routes = require('./routes/') //index file containing routing info
-const { connect } = require('./database')
+const db = require('./database')
 
 const app = express()
 
@@ -32,7 +32,7 @@ app.use(routes)
 
 
 //Listens to Port for changes
-connect()
+db.connect()
 	.then(() => {
 		app.listen(port, () => {
 			console.log(`Express server listening on port ${port}`)
