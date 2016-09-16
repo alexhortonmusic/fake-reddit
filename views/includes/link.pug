@@ -3,11 +3,13 @@ each article in articles
     .col-md-1
       .voteBox
         .upvote
-          button.btn.btn-default
-            span.glyphicon.glyphicon-chevron-up
+          form(action=`/${article._id}/up` method='POST')
+            button(type='submit' value='up').btn.btn-default
+              span.glyphicon.glyphicon-chevron-up
         .downvote
-          button.btn.btn-default
-            span.glyphicon.glyphicon-chevron-down
+          form(action=`/${article._id}/down` method='POST')
+            button(type='submit' value='down').btn.btn-default
+              span.glyphicon.glyphicon-chevron-down
       .counter
         h3 #{article.score}
     .col-md-2
