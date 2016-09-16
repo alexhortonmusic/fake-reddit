@@ -4,6 +4,7 @@ const { Router } = require('express')
 const router = Router()
 
 const newPost = require('../models/newPost')
+const comment = require('../models/comment')
 
 // models
 router.get('/', (req, res, err) =>
@@ -14,7 +15,6 @@ router.get('/', (req, res, err) =>
     )
     .catch(err)
 )
-
 
 // up vote
 router.post('/:id/up', (req, res, err) => {
@@ -35,7 +35,7 @@ router.post('/:id/down', (req, res, err) => {
 })
 
 router.get('/new', (req, res) =>
-	res.render('new-topic')
+	res.render('new-topic', {page: 'New Post'})
 )
 
 router.post('/new', (req, res, err) => {
@@ -46,5 +46,21 @@ router.post('/new', (req, res, err) => {
 		.then(() => res.redirect('/'))
 		.catch(err)
 })
+
+router.get('/comments', (req, res) => {
+  // let _postId = req.params.id
+  let _postId = '57dc49de8feeab12a1d9cbdb'
+  comment
+    .find({ postId: _postId })
+    .sort({ datePosted: -1 })
+    .then(comments =>
+      console.log(comments)
+      )
+})
+
+// router.post('/comments', (req, res, err) => {
+//
+// })
+
 
 module.exports = router
