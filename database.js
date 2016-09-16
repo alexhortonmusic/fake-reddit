@@ -1,8 +1,8 @@
 'use strict'
 
 const mongoose = require('mongoose')
-const MONGODB_URL = MONGO_DB_URL || 'mongodb://localhost:27017/fake-reddit'
 
+const MONGODB_URL = process.env.MONGO_DB_URL || 'mongodb://localhost:27017/fake-reddit'
 
 mongoose.Promise = Promise
 
