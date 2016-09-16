@@ -1,0 +1,20 @@
+extends includes/layout.pug
+
+block content
+	.topic-form
+		form(method='POST')
+			h2 Add Comment
+			.form-group
+				label(for='userName') User Name:
+				input.form-control#userName(type='text' name='userName')
+			.form-group
+				label(for='commentText') Comment:
+				textarea.form-control#commentText(type='text' name='commentText' rows='3')
+			.topic-form__submit
+				a.btn.btn-danger.btn-lg(href='/') Cancel
+				input.btn.btn-success.btn-lg(type='submit' value='Submit')
+	each comment in comments
+		.col-md-12
+			.comments
+				h3 Posted by: #{comment.userName}, #{comment.datePosted}:
+				h2 #{comment.commentText}

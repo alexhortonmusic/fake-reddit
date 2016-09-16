@@ -47,20 +47,27 @@ router.post('/new', (req, res, err) => {
 		.catch(err)
 })
 
-router.get('/comments', (req, res) => {
-  // let _postId = req.params.id
-  let _postId = '57dc49de8feeab12a1d9cbdb'
+router.get('/comments/:id', (req, res) => {
+  let _postId = req.params.id
+  // let _postId = '57dc49de8feeab12a1d9cbdb'
   comment
     .find({ postId: _postId })
     .sort({ datePosted: -1 })
     .then(comments =>
-      console.log(comments)
-      )
+      res.render('comments', {page: 'Comments', comments})
+    )
 })
 
-// router.post('/comments', (req, res, err) => {
-//
-// })
+router.post('/comments/:id', (req, res, err) => {
+  let _postId = req.params.id
+  req.body.postId = _postId
+  req.body.dateAdded = new Date()
+  console.log(req.body)
+  comment
+    .create(req.body)
+    .then(() => res.redirect(`/comments/${_postId}`))
+    .catch(err)
+})
 
 
 module.exports = router
