@@ -8,23 +8,13 @@ const newPost = require('../models/newPost')
 // models
 router.get('/', (req, res, err) =>
   newPost
-    .find()
+    .find().sort({score: -1})
     .then(articles =>
       res.render('index', {page: 'Home', articles})
     )
     .catch(err)
 )
 
-// router.post("/:id/up", (req, res) => {
-//   let postID = req.params.id;
-//   Post.findById(postID, (err, docs) => {
-//     docs.votes++;
-//     docs.save((err) => {
-//       if(err)
-//       res.redirect("/");
-//     })
-//   });
-// });
 
 // up vote
 router.post('/:id/up', (req, res, err) => {
