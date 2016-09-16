@@ -17,3 +17,5 @@ each article in articles
     .col-md-8
       h2
         a(href=article.link) #{article.title}
+      p
+        a(href=`/comments/${article._id}`) Comments
