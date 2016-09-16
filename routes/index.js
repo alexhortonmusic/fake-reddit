@@ -15,16 +15,6 @@ router.get('/', (req, res, err) =>
     .catch(err)
 )
 
-// router.post("/:id/up", (req, res) => {
-//   let postID = req.params.id;
-//   Post.findById(postID, (err, docs) => {
-//     docs.votes++;
-//     docs.save((err) => {
-//       if(err)
-//       res.redirect("/");
-//     })
-//   });
-// });
 
 // up vote
 router.post('/:id/up', (req, res, err) => {
