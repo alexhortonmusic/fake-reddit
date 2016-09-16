@@ -13,3 +13,11 @@
 .articleImg {
   width: 100px;
 }
+
+.counter {
+  width: 40px;
+}
+
+.counter h3 {
+  text-align: center;
+}

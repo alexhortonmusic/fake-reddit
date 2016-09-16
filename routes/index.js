@@ -8,7 +8,7 @@ const newPost = require('../models/newPost')
 // models
 router.get('/', (req, res, err) =>
   newPost
-    .find()
+    .find().sort({score: -1})
     .then(articles =>
       res.render('index', {page: 'Home', articles})
     )
