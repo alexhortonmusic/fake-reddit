@@ -18,8 +18,6 @@ if (process.env.NODE_ENV !== 'production') {
 	app.locals.pretty = true
 }
 
-
-
 app.locals.company = 'Freddit'
 
 //middlewares
