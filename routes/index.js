@@ -49,7 +49,6 @@ router.post('/new', (req, res, err) => {
 
 router.get('/comments/:id', (req, res) => {
   let _postId = req.params.id
-  // let _postId = '57dc49de8feeab12a1d9cbdb'
   comment
     .find({ postId: _postId })
     .sort({ datePosted: -1 })
@@ -61,7 +60,7 @@ router.get('/comments/:id', (req, res) => {
 router.post('/comments/:id', (req, res, err) => {
   let _postId = req.params.id
   req.body.postId = _postId
-  req.body.dateAdded = new Date()
+  req.body.datePosted = new Date().toString()
   console.log(req.body)
   comment
     .create(req.body)
