@@ -7,5 +7,5 @@ This app is a basic clone of Reddit. Allows user to post links with photos, comm
 Uses Node.js, Express, MongoDB, and Pug. Deployed on Heroku.
 
 ## Contributors
-[Alex Horton](https://github.com/alexhortonmusic)
+[Alex Horton](https://github.com/alexhortonmusic)  
 [Jamey McAuliffe](https://github.com/JameyMcAuliffe)
